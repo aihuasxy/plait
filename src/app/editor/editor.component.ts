@@ -19,6 +19,7 @@ import { AppMainToolbarComponent } from '../components/main-toolbar/main-toolbar
 import { AppZoomToolbarComponent } from '../components/zoom-toolbar/zoom-toolbar.component';
 import { FormsModule } from '@angular/forms';
 import { PlaitBoardComponent } from '../../../packages/core/src/board/board.component';
+import { WidthRulerComponent, HeightRulerComponent } from '../components/ruler/ruler.component';
 
 const LOCAL_DATA_KEY = 'plait-board-change-data';
 
@@ -26,7 +27,15 @@ const LOCAL_DATA_KEY = 'plait-board-change-data';
     selector: 'app-basic-board-editor',
     templateUrl: './editor.component.html',
     standalone: true,
-    imports: [PlaitBoardComponent, FormsModule, AppZoomToolbarComponent, AppMainToolbarComponent, AppSettingPanelComponent]
+    imports: [
+        PlaitBoardComponent,
+        FormsModule,
+        AppZoomToolbarComponent,
+        AppMainToolbarComponent,
+        AppSettingPanelComponent,
+        WidthRulerComponent,
+        HeightRulerComponent
+    ]
 })
 export class BasicBoardEditorComponent implements OnInit {
     plugins = [withMind, withMindExtend, withDraw];
